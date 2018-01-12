@@ -12,12 +12,20 @@ import Vapor
 
 
 final class TestModel: Model, Content {
+    
     typealias Database = MySQLDatabase
     typealias ID = Int
+    
     static var idKey = \TestModel.id
+    
     var id: Int?
     var type: String
-    init() { self.id = nil; self.type = ".text" }
+    
+    init() {
+        self.id = nil
+        self.type = ".text"
+    }
+    
 }
 
 extension TestModel: Migration {
